@@ -4,18 +4,18 @@ from random import randbytes
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from datetime import datetime
 
-from src import models, schemas, oauth2, utils
+from src import models, oauth2, utils
 from src.database import get_db
 from sqlalchemy.orm import Session
 
 from src.email import Email
-from src.schemas.user_schemas import UserEmailSchema
+from src.schemas.user_schemas import *
 
 router = APIRouter()
 
 
 # User profile
-@router.get('/me', response_model=schemas.UserResponse)
+@router.get('/me', response_model=UserResponse)
 def get_me(db: Session = Depends(get_db), user_id: str = Depends(oauth2.require_user)):
     user = db.query(models.User).filter(models.User.id == user_id).first()
     return user
@@ -23,7 +23,7 @@ def get_me(db: Session = Depends(get_db), user_id: str = Depends(oauth2.require_
 
 # User update
 @router.put('/me/update')
-def user_update(payload: schemas.UpdateUserSchema, db: Session = Depends(get_db),
+def user_update(payload: UpdateUserSchema, db: Session = Depends(get_db),
                 user_id: str = Depends(oauth2.require_user)):
     user_query = db.query(models.User).filter(models.User.id == user_id)
     updated_user = user_query.first()
@@ -97,7 +97,7 @@ def verify_reset_password_token(token: str, db: Session = Depends(get_db)):
 
 # Change user password
 @router.put('/me/change_password')
-def change_password(payload: schemas.UpdateUserPasswordSchema, db: Session = Depends(get_db)):
+def change_password(payload: UpdateUserPasswordSchema, db: Session = Depends(get_db)):
     user_query = db.query(models.User).filter(models.User.id == payload.user_id)
     updated_user = user_query.first()
     if not updated_user:
@@ -111,7 +111,7 @@ def change_password(payload: schemas.UpdateUserPasswordSchema, db: Session = Dep
     payload.password = utils.hash_password(payload.password)
     del payload.passwordConfirm
     del payload.user_id
-    user_query.update(payload.model_dump(exclude_unset=True), synchronize_session=False)
+    user_query.update(payload.dict(exclude_unset=True), synchronize_session=False)
     user_query.update({'updated_at': datetime.now()}, synchronize_session=False)
     db.commit()
     return {

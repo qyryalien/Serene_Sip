@@ -6,12 +6,13 @@ from fastapi import APIRouter, Request, Response, status, Depends, HTTPException
 from pydantic import EmailStr
 from sqlalchemy.orm import Session
 
-from src import models, schemas, oauth2, utils
+from src import models, oauth2, utils
 
 from src.config import settings
 from src.database import get_db
 from src.email import Email
 from src.oauth2 import AuthJWT
+from src.schemas.user_schemas import *
 
 router = APIRouter()
 ACCESS_TOKEN_EXPIRES_IN = settings.ACCESS_TOKEN_EXPIRES_IN
@@ -20,7 +21,7 @@ REFRESH_TOKEN_EXPIRES_IN = settings.REFRESH_TOKEN_EXPIRES_IN
 
 # Register a new user
 @router.post('/register', status_code=status.HTTP_201_CREATED)
-async def create_user(payload: schemas.CreateUserSchema, request: Request, db: Session = Depends(get_db)):
+async def create_user(payload: CreateUserSchema, request: Request, db: Session = Depends(get_db)):
     # Check if user already exist
     user_query = db.query(models.User).filter(
         models.User.email == EmailStr(payload.email.lower()))
@@ -92,7 +93,7 @@ def verify_email_token(token: str, db: Session = Depends(get_db)):
 
 # Login user
 @router.post('/login')
-def login(payload: schemas.LoginUserSchema, response: Response, db: Session = Depends(get_db),
+def login(payload: LoginUserSchema, response: Response, db: Session = Depends(get_db),
           Authorize: AuthJWT = Depends()):
     # Check if the user exist
     user = db.query(models.User).filter(
