@@ -8,7 +8,8 @@ from pydantic import BaseModel, EmailStr, constr
 class UserBaseSchema(BaseModel):
     name: str
     email: EmailStr
-    photo: str
+    address: str
+    phone_number: str
 
     class Config:
         orm_mode = True
@@ -24,7 +25,8 @@ class CreateUserSchema(UserBaseSchema):
 class UpdateUserSchema(BaseModel):
     name: str
     email: EmailStr
-    photo: str
+    address: str
+    phone_number: constr(regex=r"^\\+?[1-9][0-9]{7,14}$")
 
     class Config:
         orm_mode = True
@@ -49,6 +51,3 @@ class UserResponse(UserBaseSchema):
     id: int
     created_at: datetime
     updated_at: datetime
-
-
-

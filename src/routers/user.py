@@ -4,14 +4,12 @@ from random import randbytes
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from datetime import datetime
 
-from pydantic import EmailStr
-
 from src import models, schemas, oauth2, utils
 from src.database import get_db
 from sqlalchemy.orm import Session
 
 from src.email import Email
-from src.schemas import UserEmailSchema
+from src.schemas.user_schemas import UserEmailSchema
 
 router = APIRouter()
 
