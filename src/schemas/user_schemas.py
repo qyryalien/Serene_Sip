@@ -2,14 +2,15 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from pydantic import BaseModel, EmailStr, constr
+from pydantic import BaseModel, EmailStr, constr, Field
+from pydantic.schema import Optional
 
 
 class UserBaseSchema(BaseModel):
     name: str
     email: EmailStr
-    address: str
-    phone_number: str
+    address: Optional[str]
+    phone_number: Optional[str]
 
     class Config:
         orm_mode = True
@@ -26,7 +27,7 @@ class UpdateUserSchema(BaseModel):
     name: str
     email: EmailStr
     address: str
-    phone_number: constr(regex=r"^\\+?[1-9][0-9]{7,14}$")
+    phone_number: str = Field(regex=r"^\+38[ -]?(\(\d{3}\)|\d{3})[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}$")
 
     class Config:
         orm_mode = True
