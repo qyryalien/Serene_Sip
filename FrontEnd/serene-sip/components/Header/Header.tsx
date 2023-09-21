@@ -1,44 +1,17 @@
-// import style from "./Header.module.scss";
-import "./Header.scss";
-// import { stylesConverter } from "./t.js";
+import { WorkSans } from "@/app/fonts"
 
 export default function Header() {
     return (
-        // <header className={style.header}>
-        //     <div className={`${style.header} ${style.container}`}>
-        //         <div className={`${style.header} ${style.logo}`}>Image</div>
-        //         {/* <div className={`${`${style.header} ${style.rightSide}`} ${style.rightSide}`}> */}
-        //         <div className={`${style.header} ${style.rightSide} ${style.rightSide}`}>
-        //             <div className={`${style.rightSide} ${style.links}`}>A</div>
-        //             <div className={`${style.rightSide} ${style.icons}`}>B</div>
-        //             <div className={`${style.rightSide} ${style.button}`}>C</div>
-        //         </div>
-        //     </div>
-        // </header>
-
-        //    <header className={stylesConverter["header"]}>
-        //         <div className={stylesConverter["header__container"]}>
-        //             <div className={stylesConverter["header__logo"]}>Image</div>
-        //             <div className={`${stylesConverter["header__right-side"]} ${stylesConverter["right-side"]}`}>
-        //                 <div className="right-side__links">A</div>
-        //                 <div className="right-side__icons">B</div>
-        //                 <div className="right-side__button">C</div>
-        //             </div>
-        //         </div>
-        //         <button></button>
-        //     </header>
-
-        <header className="header">
-            <div className="header__container">
-                <div className="header__logo">Image</div>
-                <div className="header__right-side right-side">
-                    <div className="right-side__links">A</div>
-                    <div className="right-side__icons">B</div>
-                    <div className="right-side__button">C</div>
+        <header className={`header ml-14 ${WorkSans.className}`}>
+            <div className="container mx-auto px-10">
+                <div className="header__logo"><a href="" className="header__logo"><img data-src="../img/logo.svg" alt="" /></a></div>
+                <div className="flex flex-row gap-x-7 text-3xl font-normal">
+                    <div className="">Aa</div>
+                    <div className="">Bb</div>
+                    <div className="">Cc</div>
                 </div>
             </div>
             <button></button>
         </header>
     )
-
 }

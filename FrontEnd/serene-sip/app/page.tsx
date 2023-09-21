@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <>start</>
+    <h1 className="text-1xl text-brightpink">
+      Hello world!
+    </h1>
   )
 }
