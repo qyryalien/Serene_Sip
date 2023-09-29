@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 export default function SignIn() {
     return (
         <>
-            <Header />
+            sign-in content
         </>
     )
 }

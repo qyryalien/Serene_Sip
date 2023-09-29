@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .hamburger div:first-child {
+        @apply rotate-45 translate-y-1
+    }
+
+    .hamburger div:nth-child(2) {
+        @apply opacity-0
+    }
+
+    .hamburger div:last-child {
+        @apply -rotate-45 -translate-y-1
+    }
+}
 
 $lightest: #FDFCFA;
 $light: #F7EDE2;
