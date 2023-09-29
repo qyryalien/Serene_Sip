@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PlayfairDisplay } from './fonts';
 import './globals.scss'
+import Header from '@/components/Header/Header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +21,10 @@ export default function RootLayout({
       </head>
       <body
         className={PlayfairDisplay.className}
-      >{children}</body>
+      >
+        <Header></Header>
+        {children}
+      </body>
     </html>
   )
 }
