@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { PlayfairDisplay } from './fonts';
 import './globals.scss'
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,10 +21,15 @@ export default function RootLayout({
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
       </head>
       <body
-        className={PlayfairDisplay.className}
+        className={`${PlayfairDisplay.className} h-screen`}
       >
-        <Header></Header>
-        {children}
+        <div className='wraper min-h-full flex flex-col '>
+          <Header></Header>
+          <main className='flex-auto'>
+            {children}
+          </main>
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   )
