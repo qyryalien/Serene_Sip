@@ -11,7 +11,7 @@ export default function Header() {
             <header className={`header ${WorkSans.className} fixed z-10 w-full bg-lightest`}>
                 <div className="container flex flex-auto xxs:justify-between items-center mx-auto xxs:py-4 mdl:py-10 xxs:px-7 mdl:px-15">
                     <div className="relative z-50 xxs:w-[122px] md:w-[150px] mdl:w-[181px] h-[40px]">
-                        <Link href="/" className="  w-full h-full">
+                        <Link href="/" className="w-full h-full">
                             <Image
                                 src="/header/logo/Logo.svg"
                                 fill
