@@ -5,7 +5,7 @@ import { WorkSans, PlayfairDisplay } from "@/app/fonts"
 export default function Footer() {
     return (
         <footer >
-            <div className={`${WorkSans.className} flex xxs:flex-col md:grid md:grid-cols-[300px_minmax(0,_auto)] md:grid-rows-[minmax(0,_1fr)_minmax(0,_auto)] xxs:gap-y-8 md:gap-y-16 px-7 py-10 bg-green`}>
+            <div className={`${WorkSans.className} flex xxs:flex-col md:grid md:grid-cols-[300px_minmax(0,_auto)] md:grid-rows-[minmax(0,_1fr)_minmax(0,_auto)] xxs:gap-y-8 md:gap-y-16 xxs:px-7 xxs:py-10 mdl:px-15 bg-green`}>
                 <div className="leftSideFooter flex flex-col items-start content-start gap-y-8 max-w-[288px]">
                     <div className=" relative logo xxs:w-[122px] md:w-[150px] mdl:w-[181px] h-[40px]">
                         <Link href="/" className="w-full h-full">
@@ -40,7 +40,7 @@ export default function Footer() {
                                 src="/footer/facebook.svg"
                                 fill
                                 alt="Main logo 'Serene Sip'"
-                                className="bg-white p-4 rounded-full"
+                                className="bg-white p-4 rounded-full hover:bg-grey-1"
                             />
                         </Link>
                         <Link href="/" className="relative w-14 h-14">
@@ -48,7 +48,7 @@ export default function Footer() {
                                 src="/footer/twitter.svg"
                                 fill
                                 alt="Main logo 'Serene Sip'"
-                                className="bg-white p-4 rounded-full"
+                                className="bg-white p-4 rounded-full hover:bg-grey-1"
                             />
                         </Link>
 
@@ -58,7 +58,7 @@ export default function Footer() {
                                 src="/footer/instagram.svg"
                                 fill
                                 alt="Main logo 'Serene Sip'"
-                                className="bg-white p-4 rounded-full"
+                                className="bg-white p-4 rounded-full hover:bg-grey-1"
                             />
                         </Link>
                     </div>
