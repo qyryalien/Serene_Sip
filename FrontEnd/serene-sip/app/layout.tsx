@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${PlayfairDisplay.className} h-screen`}
       >
-        <div className='wraper min-h-full flex flex-col '>
+        <div className='wraper overflow-hidden min-h-full flex flex-col '>
           <Header></Header>
           <main className='flex-auto'>
             {children}
