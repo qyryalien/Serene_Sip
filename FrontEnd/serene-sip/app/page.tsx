@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { WorkSans, PlayfairDisplay } from './fonts'
+import { ProductCatalog } from '@/components/ProductCatalog/ProductCatalog'
 
 export default function Home() {
   return (
@@ -205,6 +206,24 @@ export default function Home() {
                 enjoying the serene ambiance we provide.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='flex flex-wrap flex-col justify-start  items-center gap-y-10 bg-white xxs:px-7 xxs:py-16 mdl:px-15 mdl:py-20'>
+        <ProductCatalog catalogTitle='New Products'></ProductCatalog>
+        <div className=' flex flex-grow basis-auto xxs:w-full xs:w-max  border  border-green rounded-lg xxs:justify-between md:gap-x-2 px-4 py-2 '>
+          <p className={`${WorkSans.className} text-dark tracking-[-0.48px]`}>
+            See all products
+          </p>
+          <div className='relative w-6 h-6 '>
+            <Image
+              className='absolute object-cover'
+              src='/home/chevron-right.svg'
+              width={24}
+              height={24}
+              alt='icon chevron right'
+            ></Image>
           </div>
         </div>
       </section>

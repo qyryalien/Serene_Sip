@@ -43,11 +43,17 @@ module.exports = {
         'md': '768px',
         // => @media (min-width: 768px) { ... }
 
+        'max-md': {'max': '767px'},
+        // => @media (max-width: 767px) { ... }
+
         'mdl': '992px',
         // => @media (min-width: 992px) { ... }
 
         'lg': '1024px',
         // => @media (min-width: 1024px) { ... }
+        
+        'max-lg': {'max': '1024px'},
+        // => @media (max-width: 767px) { ... }
 
         'xl': '1280px',
         // => @media (min-width: 1280px) { ... }

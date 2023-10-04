@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "image": "/images/newProducts/P1.jpg",
+            "title": "Botanical Tea Sampler Set",
+            "price": 10.99
+        },
+        {
+            "id": 2,
+            "image": "/images/newProducts/P2.jpg",
+            "title": "Botanical Tea Sampler Set",
+            "price": 19.99
+        },
+        {
+            "id": 3,
+            "image": "/images/newProducts/P3.jpg",
+            "title": "Botanical Tea Sampler Set",
+            "price": 10.99
+        },
+        {
+            "id": 4,
+            "image": "/images/newProducts/P4.png",
+            "title": "Botanical Tea Sampler Set",
+            "price": 19.99
+        },
+        {
+            "id": 5,
+            "image": "/images/newProducts/P4.png",
+            "title": "Botanical Tea Sampler Set",
+            "price": 10.99
+        },
+        {
+            "id": 6,
+            "image": "/images/newProducts/P3.jpg",
+            "title": "Botanical Tea Sampler Set",
+            "price": 19.99
+        },
+        {
+            "id": 7,
+            "image": "/images/newProducts/P2.jpg",
+            "title": "Botanical Tea Sampler Set",
+            "price": 10.99
+        },
+        {
+            "id": 8,
+            "image": "/images/newProducts/P1.jpg",
+            "title": "Botanical Tea Sampler Set",
+            "price": 29.99
+        }
+    ]
+}
