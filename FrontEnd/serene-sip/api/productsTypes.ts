@@ -5,9 +5,3 @@ export interface Product {
     price: number;
 }
 
-interface Data {
-    products: Product[];
-}
-
-declare const data: Data;
-export default data;

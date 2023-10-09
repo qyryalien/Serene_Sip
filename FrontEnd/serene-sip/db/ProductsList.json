@@ -1,4 +1,15 @@
 {
+    "ads_Join_us": {
+        "src": "/home/JoinUs/barista.png",
+        "description": {
+            "title": "Unleash Your Inner Barista",
+            "texts": [
+                "Join our Be Barista workshops and discover the art of coffee craftsmanship. ",
+                "Learn the techniques behind brewing the perfect cup, explore flavor profiles, and gain insights from our skilled baristas. ",
+                "Unlock your potential as a coffee connoisseur and create your own serene moments at home."
+            ]
+        }
+    },
     "products": [
         {
             "id": 1,
