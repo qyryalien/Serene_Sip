@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { WorkSans, PlayfairDisplay } from './fonts'
 import { ProductCatalog } from '@/components/ProductCatalog/ProductCatalog'
+import { ArticleBlock } from '@/components/InformationComponent/ArticleBlock'
 
 export default function Home() {
   return (
@@ -227,6 +228,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ArticleBlock orderOfComponents="xxs:order-first mdl:order-last" imgHeightSize="xxs:h-[300px] xs:h-[380px] md:h-[520px] mdl:h-[460px] xl:h-[530px]" />
     </>
   )
 }
